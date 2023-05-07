@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Browser Object Model - BOM</h1>
+    <hr>
+
+    <h3>
+        window object
+    </h3>
+    <hr>
+    <pre>
+        window.innerHeight; // browser display height
+        window.innerWidth;  // browser display width
+        window.OuterWidth;  // full browser width
+        window.OuterHeight; // full browser height
+    </pre>
+    <hr>
+
+    <h3>Action </h3>
+    <hr>
+    <pre>
+    to open:
+        element.addEventListner('click') function() {
+            window.open(url, name, features);
+        }
+
+        //there are more features to use
+
+        example:
+            let link = document.querySelector('#button');
+            let url = "https://www.google.com";
+            let name = "google"
+            let features = "height=500, width=300";
+            link.addEventListener('click', function() {
+                window.open(url, google, features);
+            });
+
+    to close:
+        element.addEventListner('click') function() {
+            window.close(window to close);
+        }
+
+        example:
+            link.addEventListener('click', function() {
+                win = window.open(url, name, features);
+            });
+            let link1 = document.querySelector('#button1');
+            link1.addEventListener('click', function() {
+                window.close(win);
+            });
+
+    </pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

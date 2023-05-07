@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>default parameters</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Default parameters</h1>
+    <hr>
+    <p>this is to give a default value to the parameter</p>
+    <pre>
+        syntax: function function_name(parameter1 = value, parametern = value) {}
+
+        example:
+            function add(a=2, b=2) {
+                console.log(a+b);
+            }
+            add(); //2 + 2 = 4
+            add(5); //5 + 2 = 7
+            add(5, 5); //5 + 5 = 7
+    </pre>
+    <hr>
+    <script>
+        function add(a=2, b=2) {
+            console.log(a+b);
+        }
+        add(); //2 + 2 = 4
+        add(5); //5 + 2 = 7
+        add(5, 5); //5 + 5 = 7
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modules</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Modules</h1>
+    <hr>
+    <h4>Export</h4>
+    <pre>
+        syntax:
+            export variables/functions/etc.. 
+            (for more than one export)
+            export {variable1, valriable2, funciton1, function2, etc, etc}
+    </pre>
+    <hr>
+    <h4>Import</h4>
+    <pre>
+        syntax:
+            import {value} from 'path'
+              (or)
+            import value from 'path'
+            (for more than one import from the same file)
+            import {value1, value2, valuen} from 'path'
+
+            (for re-naming and using an imported value)
+            import value as newName _to_call from 'path'
+
+            (to import all the exported values from a single file)
+            import * as name from 'path'
+            //calling the value
+            name.variable;
+            name.function();
+
+            (to import and use default function)
+            import {default as name} from 'path'
+            name();
+    </pre>
+    <hr>
+    
+    <script src="index.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array destructuring</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Array Destructuring</h1>
+    <hr>
+    <p> allows you to neatly extract an array's value into new variables</p>
+    <hr>
+    <pre>
+        syntax:
+            let[name_1, name_2, ..., name_n] = [array_value1, array_value2, ..., array_valuen];
+                for nested array
+            let[name_1, name_2, [nest1, nest2]] = [array_value1, array_value2, [nestValue1, nestValue2]];
+
+        example:
+            let[namee, page, price] = ["Advance JS", 200, 3000];
+            console.log(namee);
+            console.log(page);
+            console.log(price);
+
+            let[a1, a2, [b1, b2]] = ["a_value1", "a_value2", ["b_value1", "b_value2"]];
+            console.log(a1 + " " + a2 + " " + b1 + " " + b2)
+        
+        usecase:
+            function rand() {
+                return [true, false, "NaN"];
+            }
+            let[t, f, n] = rand();
+            console.log(t + " " + f + " " + n);
+    </pre>
+    <hr>
+    
+    <script src="script.js"></script>
+</body>
+</html>

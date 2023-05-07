@@ -1,0 +1,36 @@
+{
+    "students": [
+        {
+            "name": "charan",
+            "age": 19
+        },
+        {
+            "name": "kiran",
+            "age": 18
+        },
+        {
+            "name": "john",
+            "age": 20
+        },
+        {
+            "name": "salim",
+            "age": 19
+        },
+        {
+            "name": "soheb",
+            "age": 19
+        },
+        {
+            "name": "aksh",
+            "age": 18
+        },
+        {
+            "name": "kishor",
+            "age": 20
+        },
+        {
+            "name": "shyam",
+            "age": 19
+        }
+    ]
+}

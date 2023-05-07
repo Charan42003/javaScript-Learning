@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/global.css">
+    <title>Array</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> Array in JavaScript</h1>
+    <hr>
+    <p>Used to store a collection on data or values</p>
+    <pre>
+        syntax: let/var/const array_name = [];
+
+        Example: 
+            let book = ["math", "physics", "bio", "computer"];
+                            (or)
+            let book = new Array("math", "physics", "bio", "computer");
+            console.log(book[2]);
+
+            let book = ["math", true, 1, "%%"];
+    </pre>
+    <hr><hr>
+
+    <h1 style="text-align: center;"> Operations On Array</h1>
+    <p> Array Length </p>
+    <pre>
+        syntax: 
+                array_name.length;
+        
+        Example: 
+                let names = ["varun", "john", "rohn", "wing"];
+                console.log("Array Length: " + names.length);
+    </pre>
+    <hr>
+
+    <p> Add element to the Array after the last index</p>
+    <pre>
+        syntax: 
+                array_name.push('element');
+        
+        Example: 
+                let names = ["varun", "john", "rohn", "wing"];
+                names.push("kiran");
+    </pre>
+    <hr>
+
+    <p> Add element to the Array in first index</p>
+    <pre>
+        syntax: 
+                array_name.unshift('element');
+        
+        Example: 
+                let names = ["varun", "john", "rohn", "wing"];
+                names.unshift("kiran");
+    </pre>
+    <hr>
+
+    <p> Remove the Elements in Array from last</p>
+    <pre>
+        syntax: 
+                array_name.pop();
+        
+        Example: 
+                let names = ["varun", "john", "rohn", "wing"];
+                names.pop();
+    </pre>
+    <hr>
+
+    <p> Remove the Elements in Array from first</p>
+    <pre>
+        syntax: 
+                array_name.shift();
+        
+        Example: 
+                let names = ["varun", "john", "rohn", "wing"];
+                names.shift();
+    </pre>
+    <hr>
+
+    <p> Remove the Elements in Array from middle</p>
+    <pre>
+        syntax: 
+                array_name.splice(start_index, howmany_elements_to_remove);
+        
+        Example: 
+                let names = ["varun", "john", "rohn", "wing"];
+                names.splice(2, 2);
+    </pre>
+    <hr>
+
+    <p> To Empty an Array </p>
+    <pre>
+        syntax: 
+                array_name = [];
+                     (or)
+                array_name.length = 0;
+        
+        Example: 
+                let names = ["varun", "john", "rohn", "wing"];
+                names = [];
+                    (or)
+                names.length = 0;
+    </pre>
+    <hr>
+
+    <p> Find the Position of a particular element in an Array </p>
+    <pre>
+        syntax: 
+                array_name.indexOf(element);
+        
+        Example: 
+                let names = ["varun", "john", "rohn", "wing"];
+                let leng = names.indexOf("john");
+    </pre>
+    <hr>
+
+    <p> Check if it is an Array or not </p>
+    <pre>
+        syntax: 
+                Array.isArray('name');
+        
+        Example: 
+                let names = ["varun", "john", "rohn", "wing"];
+                let leng = 4;
+                console.log(Array.isArray(names));
+                console.log(Array.isArray(leng));
+    </pre>
+    <hr>
+
+    <p> split a string to array elements </p>
+    <pre>
+        syntax: 
+                array_name.split('where to split');
+        
+        Example: 
+                let txt = "this is a paragraph broken into array";
+                let ary = txt.split(' ');
+    </pre>
+    <hr>
+    
+    <p> join array elements into a string </p>
+    <pre>
+        syntax: 
+                array_name.join('character to join two array elements');
+        
+        Example: 
+                let arry = ["this", "is", "an", "array", "joined", "like", "a", "string"];
+                let txt = arry.join(' ');
+    </pre>
+    <hr>
+
+    <p> join two or more arrays </p>
+    <pre>
+        syntax: 
+                let new_array = array1.concat(array2); // if more arrays then array1.concat(array2, array3, ...)
+        
+        Example: 
+                let array1 = ["one", "two", "three"];
+                let array2 = [1, 2, 3];
+                let new_array = array1.concat(array2);
+    </pre>
+    <hr>
+
+    <h1 style="text-align: center;"> Multi Dimensional Array</h1>
+    <p> multi-dimensional array</p>
+    <pre>
+        syntax: 
+                let array = [[],[]];        
+        Example: 
+                let multi_array = [
+                   ["wings of fire", "300/-"],
+                   ["MCA", "400/-"],
+                   ["Soul of Happiness", "900/-"]
+                ];
+
+                [    0   1
+                  0[00, 01],
+                  1[10, 11],
+                  2[20, 21]
+                ]
+    </pre>
+    <hr>
+
+    <h1 style="text-align: center;"> Loop through Array</h1>
+    <p> loop through array</p>
+    <pre>
+        syntax: 
+                for(initialization start index of array; condition less than array length; increment/decrement) {
+                        array[value of the initialized variable];
+                }      
+        Example: 
+                let loop_array = ["hello", "world", "!!", "welcome"];
+                let length = loop_array.length;
+                for( let i = 0; i < length; i++) {
+                        console.log(`loop_array[${i}]: ${loop_array[i]} \n`);
+                }
+    </pre>
+    <hr>
+
+    <p> forEach() </p>
+    <pre>
+        syntax: 
+                array_name.forEach(function_name);
+                function function_name(value) {
+                        value; // value of each array Element
+                }
+        Example: 
+                loop_array = ["hello", "world", "!!", "welcome"];
+                loop_array.forEach(func);
+                function func(value) {
+                        console.log(value);
+                }
+    </pre>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookies</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Cookies</h1>
+    <hr>
+    <p>to view cookies </p>
+    <h3>devTool>Application>cookies</h3>
+    <hr>
+    <pre>
+        <h3>declaring and assigning value to cookie</h3>
+            //    name=value
+        document.cookie = "name=charan"
+        document.cookie = "age=19"
+        document.cookie = "item=milk"
+        <h3>setting a session expire</h3>
+                        //  name=value; expires-Day, Date Month Year Time Zone
+        document.cookie = "product=slicer; expires=Mon, 01 May 2023 12:00:00 UTC";  
+        <h3>to add more value or change value for an exesting cookie</h3>
+        document.cookie = "name=charan,raj"
+        <h3>to read a cookie</h3>
+        let x = document.cookie;
+        console.log(x)
+        <h3>to delete cookie</h3>
+        //set the expiery date to past
+        document.cookie = "item=milk; expires=Sat, 29 April 2023 12:00:00 UTC"
+    </pre>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

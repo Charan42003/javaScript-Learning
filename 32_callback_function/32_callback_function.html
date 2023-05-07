@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback function</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Callback Function</h1>
+    <hr>
+    <p>can pass a function into another function as a parameter </p>
+    <pre>
+        function sayHello(n) {
+            console.log("hello "+n)
+        }
+         
+        function process(b, func) {
+            func(b);
+        }
+        
+        process("charan", sayHello)
+
+        // parameter can also be an ananomous function 
+        function proc(a, b) {
+            console.log(a);
+            b();
+        }
+        proc(5, function() {
+            console.log("this is an ananomous function")
+        })
+    </pre>
+    <hr>
+    <script src="script.js"></script>
+</body>
+</html>

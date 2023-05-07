@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oops</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center">OOPS CONCEPT</h1>
+    <hr>
+    <p>Object Oriented Program (follow DRY-Dont Repeat Yourself)</p>
+    <p>In OOP Concept we group function and variable in a Block called Class</p>
+    <p>Three main </p>
+    <ul>
+        <li>Object</li>
+        <li>Class</li>
+        <li>Inheritance</li>
+    </ul>
+    <hr>
+    <h4>Object</h4>
+    <p>every object has 2 things</p>
+    <ul>
+        <li>Feature (or) properties</li>
+        <li>Actions performed by (or) performed on it</li>
+    </ul>
+    <pre>
+        example: 
+            charan
+            1. features or properties: full name, height, weight
+            2. action: walk, run, eat
+    </pre>
+    <hr>
+    <h4>Class</h4>
+    <p>Grouping of objects</p>
+    <pre>
+       -----------------------------------------------------
+        Man (class)
+        1. features or properties: full name, height, weight
+        2. action: walk, run, eat
+       -----------------------------------------------------
+       charan(Man) //charan is an object of Man class
+       kiran(Man) //kiran is an object of Man class
+    </pre>
+    <hr>
+    <h4>Inheritance</h4>
+    <p>Inheritance is nothing but using the properties in parent class in a child class (or) using the properties of a class inside a new class</p>
+    <hr>
+
+    <h2 style="text-align: center;">Four Pillars of Object Oriented Programming</h2>
+    <hr>
+    <dl>
+        <dt> <b>&xrArr; Encapsulation </b> </dt>
+            <dd>Encapsulation means wrapping up data and member function(Method) together into a single unit i.e.class.</dd> <br>
+        <dt> <b>&xrArr; Abstraction </b> </dt>
+            <dd>Abstraction is the process of showing only essential/ necessary features of an entity/object to the outside world and hide the other irrelevant information.</dd> <br>
+        <dt> <b>&xrArr; Inheritance </b> </dt>
+            <dd>Inheritance allows a class(subclass) to acquire the properties and behavior of another class (super-class). It helps to reuse, customize and enhance the existing code. It helps to write a code accurately and reduce the development time.</dd> <br>
+        <dt> <b>&xrArr; Polymorphism </b> </dt>
+            <dd>Polymorphism means "many forms". A subclass can define its own unique behavior and still share the same functionalities or behavior of its parent/base class.</dd> <br>
+    </dl>
+    <hr>
+    <pre>
+        //Object Oriented Programming before ES6
+
+        //creating an object 
+        let person = {
+            first_name: "charan",
+            last_name: "raj"
+        }
+        console.log(person.first_name)
+        console.log(person.last_name)
+
+        <h3>Constructor function</h3>
+        <pre style="color: #871bc5">
+        syntax:
+        function nameO(properties as parameters) {
+            this.property_name = parameterAsValue;
+        }
+        let objectName = new nameO(properties vales);
+        </pre>
+        function objectt(firstName, lastName, age, pincode) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.pincode = pincode;
+        }
+
+        let objectt1 = new objectt("charan", "raj", 19, 560049);
+        let objectt2 = new objectt("kiran", "kumar", 18, 560039);
+        console.log(objectt1)
+        console.log(objectt1.age)
+        console.log(objectt2)
+        console.log(objectt2.lastName)
+
+        <h3>prototype and Inheritance</h3>
+        let obj = {}; //prototype is added by default
+        console.log(obj)
+
+        //check if the property exists or no
+        // object_name.hasOwnProperty("property_name");
+        //example
+        function info(n, a, p) {
+            this.name= n;
+            this.age = a;
+            this.p = p;
+        }
+        let data = new info("charan", 19, "raj")
+        console.log(data)
+        console.log(data.hasOwnProperty("age")); //returns true or false
+
+        function profile(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+        }
+        // to move the fullName method into the object prototype since
+        // the method is repeating when ever the object is created
+        // to solve it
+        <pre style="color: #871bc5">
+            syntax:
+            function_name.prototype.method_Property = function() {
+                //code;
+            }
+        </pre>
+        
+        profile.prototype.fullName = function() {
+            console.log(this.firstName + " " + this.lastName);
+        } 
+        let p1 = new profile("charan", "raj", 19);
+        let p2 = new profile("kiran", "kumar", 18);
+        
+        //without using 
+            profile.prototype.fullName = function() {
+                console.log(this.firstName + " " + this.lastName);
+            } 
+        profile {firstName: 'charan', lastName: 'raj', age: 19, fullName: ƒ}
+        profile {firstName: 'kiran', lastName: 'kumar', age: 19, fullName: ƒ}
+
+        //with using 
+            profile.prototype.fullName = function() {
+                console.log(this.firstName + " " + this.lastName);
+            } 
+        profile {firstName: 'charan', lastName: 'raj', age: 19}
+        profile {firstName: 'kiran', lastName: 'kumar', age: 19}
+        console.log(p1)
+        console.log(p2)
+
+        <h3>Inheritance</h3>
+
+        //creature function
+        function creature(name, n) {
+            this.species = name;
+            this.lifespan = n;
+        }
+        creature.prototype.breath = function () {
+            console.log("breating.......")
+        }
+        let creature1 = new creature("horse", 100);
+        let creature2 = new creature("eagle", 70);
+
+
+        //human function
+        function human(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        human.prototype.think = function () {
+            console.log("thinking.......")
+        }
+
+        let human1 = new human("charan", 19);
+        let human2 = new human("kiran", 19);
+
+        <pre style="color:#871bc5">
+        // connecting human object with creature object 
+        //inheriting creature object into human object
+        human.prototype.__proto__ = Object.create(creature.prototype);
+        </pre>
+
+        console.log(creature1)
+        console.log(creature2)
+        console.log(human1)
+        console.log(human2)
+        console.log(human1.think)
+        console.log(human2.think)
+        console.log(human1.breath)
+        console.log(human2.breath)
+    </pre>
+    <h3>Class</h3>
+    <pre>
+        //class
+
+        class hello {
+            constructor() {
+                //code
+            }
+        }
+        let hh = new hello;
+        // this will create an object and the constructor function is automatically called
+        // when ever a new object is created
+        console.log(hh)
+        //example
+
+        class student {
+            constructor(name, age, roll) {
+                this.Name = name;
+                this.Age = age;
+                this.Roll = roll;
+            }
+            greet() {
+                console.log(`Hello ${this.Name}, Welcome to JS`)
+            }
+            // static function this can be called only by class name
+            // this remains with class there wont be any connection with object
+            static give(l) {
+                console.log(`you are ${l.Age}`);
+            }
+            static sprop = "welcome"
+        }
+        let student1 = new student("charan", 19, 8080000);
+        console.log(student1)
+        student1.greet();
+        //to call statice function class name should be used !(object name)
+        student.give(student1);
+        console.log(student.sprop)
+
+        <h3>Inheritance of class</h3>
+        console.warn("Inheritance of class");
+        //super() should be added to inherit
+
+        class emp {
+            constructor(name, id){
+                this.Name = name;
+                this.Id = id;
+            }
+            static msg() {
+                console.log("welcome")
+            }
+        }
+
+        // extends keyword is used to inherit emp to manager
+
+        class manager extends emp{
+            constructor(Name, Id, res){
+                super(Name, Id); // this will call the emp constructor (important);
+                this.Promotion = res
+            }
+        }
+        class admin extends manager {
+
+        }
+        let mng1 = new admin("Charan", "333d3", "Elegible");
+        console.log(mng1)
+
+        <h3>PUBLIC AND PRIVATE properties</h3>
+
+        class publicClass {
+            constructor(n){
+                this.Name = n;
+            }
+            getName() {
+                console.log(this.Name);
+            }
+        }
+        let publicClass1 = new publicClass("charan")
+        console.log(publicClass1)
+
+        //to create private properties # shoud be given before the property name
+        //and should be declared and assigned a blank string before the constructor() function;
+
+        class privateClass {
+            #Name = "";
+            constructor(n) {
+                this.#Name = n;
+            }
+            getName() {
+                console.log(this.#Name);
+            }
+        }
+        let privateClass1 = new privateClass("Ravi");
+        console.log(privateClass1);
+
+        <h3>Mixin</h3>
+        // syntax: Object.assign(class_name.prototype, Object_name);
+        let objct = {
+            sayhi() {
+                console.log("Hello objct ...")
+            },
+            sayBye() {
+                console.log("bye objct ....")
+            }
+        }
+
+        class user {
+            constructor () {
+                this.name = "charan"
+            }
+        }
+
+        class admin1 extends user {
+
+        }
+
+        //to mix the two objects
+        Object.assign(admin1.prototype, objct);
+
+        let user1 = new admin1();
+
+        console.log(user1)
+    </pre>
+    <hr>
+    <script src="script.js"></script>
+</body>
+</html>

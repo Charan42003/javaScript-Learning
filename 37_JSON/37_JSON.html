@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center;">JSON</h1>
+    <hr>
+    <p>JSON is language independent <br>
+    to create a JSON file <br>
+        syntax: file_name.json
+    </p>
+    <ul>
+        <li>Data will be in name/value pairs</li>
+        <li>Data is separated by commas</li>
+        <li>Curly braces hold objects</li>
+        <li>Square brackets hold arrays</li>
+    </ul>
+    <h3>Example</h3>
+    <pre>
+        {
+            "name": "charan",
+            "age": 19,
+            "stack": ["javascript", "jquery", "scss", "c"]
+        }
+    </pre>
+    <hr>
+    <h2>JSON FILE</h2>
+    <hr>
+    <pre>
+        {
+            "name": "charan",
+            "age": 19,
+            "stack": ["javascript", "c", "jquery", "scss/sass", "bootstrap"],
+            "is_student": true,
+            "passport_no": null,
+            "address": {
+                "city": "bangalore",
+                "state": "karnataka",
+                "country": "india",
+                "pincode": 560049
+            }
+        }
+    </pre>
+    <hr>
+    <h3>JSON file for multiple data</h3>
+    <hr>
+    <pre>
+        {
+            "students": [
+                {
+                    "name": "charan",
+                    "age": 19
+                },
+                {
+                    "name": "kiran",
+                    "age": 18
+                },
+                {
+                    "name": "john",
+                    "age": 20
+                },
+                {
+                    "name": "salim",
+                    "age": 19
+                },
+                {
+                    "name": "soheb",
+                    "age": 19
+                },
+                {
+                    "name": "aksh",
+                    "age": 18
+                },
+                {
+                    "name": "kishor",
+                    "age": 20
+                },
+                {
+                    "name": "shyam",
+                    "age": 19
+                }
+            ]
+        }
+    </pre>
+    <hr>
+    <h1 style="text-align: center;">Parse JSON</h1>
+    <hr>
+    <pre>
+        let data = `
+            {
+                "name": "charan",
+                "age": 19,
+                "stack": ["javascript", "c", "jquery", "scss/sass", "bootstrap"],
+                "is_student": true,
+                "passport_no": null,
+                "address": {
+                    "city": "bangalore",
+                    "state": "karnataka",
+                    "country": "india",
+                    "pincode": 560049
+                }
+            }
+        `;
+        
+        // JSON.parse(data) |converts the value in data to javascript object
+        let dataObject = JSON.parse(data);
+       
+        //accessing through dot notation
+        console.log(dataObject.stack)
+        console.log(dataObject.address.city)
+        
+        //accessing through array method
+        console.log(dataObject["stack"][3])
+        console.log(dataObject["address"]["country"])
+        console.log(dataObject["address"])
+    </pre>  
+    <hr>
+
+    <h1 style="text-align: center;">JSON Stringify</h1>
+    <hr>
+    <p>This is to convert a normal object to JSON form</p>
+    <pre>
+        syntax: 
+            let json_container = JSON.stringify(normal_object_name);
+            //this will convert the normal javascript object into JSON format
+
+        example:
+            let profile = {
+                name: "Charan",
+                age: 19,
+                stack: ["javascript", "c", "jquery", "scss/sass", "bootstrap"],
+                experience: null,
+                student: true,
+                address: {
+                    city: "bangalore",
+                    country: "india",
+                    pincode: 560056,
+                    homeAdd: {
+                        street: "vramp col.",
+                        land_mark: "BBB Apartments"
+                    }
+                }
+            };
+            
+            let jsonProfile = JSON.stringify(profile);
+            
+            console.log(profile);
+            console.log(jsonProfile);
+    </pre>
+    <h3>normal object: </h3>
+    <pre>
+        {
+            name: "Charan",
+            age: 19,
+            stack: ["javascript", "c", "jquery", "scss/sass", "bootstrap"],
+            experience: null,
+            student: true,
+            address: {
+                city: "bangalore",
+                country: "india",
+                pincode: 560056,
+                homeAdd: {
+                    street: "vramp col.",
+                    land_mark: "BBB Apartments"
+                }
+            }
+        }
+    </pre>
+    <hr>
+    <h3>after converting to JSON format</h3>
+    <p>JSON.stringify()</p>
+    <pre>
+        {
+            "name": "Charan",
+            "age": 19,
+            "stack": ["javascript", "c", "jquery", "scss/sass", "bootstrap"],
+            "experience": null,
+            "student": true,
+            "address": {
+                "city": "bangalore",
+                "country": "india",
+                "pincode": 560056,
+                "homeAdd": {
+                    "street": "vramp col.",
+                    "land_mark": "BBB Apartments"
+                }
+            }
+        }
+    </pre>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

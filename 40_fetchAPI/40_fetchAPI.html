@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Fetch API</h1>
+    <hr>
+    <p>fetch API is a two stage process so</p>
+    <pre>
+        syntax :
+        fetch(url)
+        .then((value) => {
+            return value.json();
+        })
+        .then((result) => {
+            //code result
+        })
+    </pre>
+    <hr>
+    <h1 style="text-align: center">Post Request</h1>
+    <hr>
+    <p>to make a post request. We need to use fetch options</p>
+    <ol>
+        <li>Method -> HHTP, post</li>
+        <li>body -> the request body</li>
+    </ol>
+    <pre>
+        // POST REQUEST 
+        let options = {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({
+                title: "foo",
+                body: "bar",
+                userId: 100,
+            })
+        }
+        fetch('url', options) 
+            .then((response) => response.json())
+            .then((json) => console.log(json))
+    </pre>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

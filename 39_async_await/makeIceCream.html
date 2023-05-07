@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>makeIceCream</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Making an IceCream</h1>
+    <hr>
+
+    <script>
+        let stocks = {
+            fruits : ["strawberry", "grapes", "banana", "apple"],
+            liquid : ["water", "ice"],
+            holder : ["cone", "cup", "stick"],
+            toppings : ["chocolate", "peanuts"]
+        }
+        
+        // then catch finally 
+        // let is_shop_open = false;
+        // let order = (time, work)=> {
+        //     return new Promise( (resolve, reject) => {
+        //         if(is_shop_open) {
+        //             setTimeout(() => {
+        //                 resolve( work())
+        //             }, time)
+        //         } else {
+        //             reject(document.write("our shop is closed"))
+        //         }
+        //     })
+        // }
+        // order(2000, ()=> {
+        //     document.write(`${stocks.fruits[0]} was selected`)
+        // })
+        // .then(()=> {
+        //     return order(0000, ()=> {
+        //         document.write(
+        //             "production has started"
+        //         )
+        //     })
+        // })
+        // .then(()=> {
+        //     return order(2000, ()=> {
+        //         document.write(
+        //             "The fruit was chopped"
+        //         )
+        //     })
+        // })
+        // .then(()=> {
+        //     return order(1000, ()=> {
+        //         document.write(`${stocks.liquid[0]} and ${stocks.liquid[1]}`)
+        //     })
+        // })
+        // .then(()=> {
+        //     return order(1000, ()=> {
+        //             document.write("start the machine")
+        //     })
+        // })
+        // .then(()=> {
+        //     return order(2000, ()=> {
+        //         document.write(`Ice cream placed on ${stocks.holder[2]}`)
+        //     })
+        // })
+        // .then(()=> {
+        //     return order(3000, ()=> {
+        //         document.write(`${stocks.toppings[0]} selected for toppings`)
+        //     })
+        // })
+        // .then(() => {
+        //     return order(1000, ()=> {
+        //         document.write("Ice Cream is served")
+        //     })
+        // })
+        // .catch((error)=> {
+        //     document.write("Our shop is closed")
+        // })
+        // .finally(()=> {
+        //     document.write("Its closing time shop is closed")
+        // })
+
+        //Async await
+        
+        let isShopOpen = false;
+        
+        let time = (ms) => {
+            return new Promise((resolve, reject) => {
+                // if(isShopOpen)
+                // {
+                    setTimeout(resolve, ms);
+                // }
+                // else {
+                //     reject(document.write("shop is closed"))
+                // }
+            })
+        }
+        async function kitchen() {
+            try{
+                await time(2000)
+                document.write(`${stocks.fruits[3]} was selected`)
+
+                await time(0000) 
+                document.write("start the production")
+
+                await time(2000)
+                document.write("cut the fruit")
+
+                await time(1000)
+                document.write(`${stocks.liquid[0]} and ${stocks.liquid[1]} was added`)
+
+                await time(1000)
+                document.write("start the machine")
+
+                await time(2000)
+                document.write(`Ice cream placed on ${stocks.holder[2]}`)
+
+                await time(3000)
+                document.write(`${stocks.toppings[0]} selected for toppings`)
+
+                await time(1000)
+                document.write("Ice Cream is served")
+
+            }
+            catch(error){
+                document.write("customer left", error)
+            }
+            finally{
+                document.write("Its time to close , we are closed")
+            }
+        }
+        kitchen();
+    </script>
+</body>
+</html>

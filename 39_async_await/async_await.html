@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async await</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Async/await</h1>
+    <hr>
+    <p>This is a special system to work with promises in javascript
+        <br>
+        A function can be made async by using async keyword like this
+    </p>
+    <pre>
+        async function charan() {
+            return "hello charan"
+        }
+    </pre>
+    <p>
+        An async function always returns a promise. Other values are wrapped in a promise actually 
+        <br>
+        we can do something like this
+    </p>
+    <pre>
+        charan().then(console.log)
+    </pre>
+    <p>So, async ensures that the function returns a promise and wraps non promises in it</p>
+    <p>Use 'await' keyword to wait till the data is fulfilled (make the function flow wait to get a value)</p>
+    <p><u>note:</u> await keyword can be used only inside an async function</p>
+    <hr>
+    <pre>
+        async function charan() {
+            let p1 = new Promise((resolve, reject) => {
+                setTimeout(()=> {
+                    resolve('21 deg')
+                }, 3000)
+            })
+            let p2 = new Promise((resolve, reject) => {
+                setTimeout(()=> {
+                    resolve('27 deg')
+                }, 5000)
+            })
+            console.log("Fetching Delhi weather please wait......")
+            let delhiw = await p1; //waits till it gets the value of p1
+            console.log("Fetched Delhi weather")
+            console.log("Fetching Bangalore weather please wait.....")
+            let bangalore2 = await p2; //wait till it gets the value of p2
+            console.log("Fetched Bangalore weather")
+            return [delhiw, bangalore2]
+        }
+        console.log(charan())
+        // charan().then((value)=> {
+        //     let[a, b] = value;
+        //     console.log(value)
+        //     console.log(a)
+        //     console.log(b)
+        // })
+    </pre>
+    <hr>
+    <h1 style="text-align: center;">Error Handling (Try & Catch)</h1>
+    <hr>
+    <pre>
+        syntax :
+
+            try {
+                //code
+            }
+            catch(error) {
+                //code
+            }
+    </pre>
+    <hr>
+    <pre>
+        //Error Handling Try Catch
+        setTimeout(function() {
+            console.log("Started Hacking abc Account")
+        }, 1000)
+
+        try {
+            console.log(abc)
+        }
+        catch(error) {
+            console.log(error)
+        }
+            
+        setTimeout(function() {
+            console.log("Fectching username and password ......")
+        }, 2000)
+        setTimeout(function() {
+            console.log("Wait for 1second 99% fectched.....")
+        }, 3000)
+        setTimeout(function() {
+            console.log("username and password fetched... Injecting the data to your device...")
+        }, 4000)
+        setTimeout(function() {
+            console.log("Hacked abc Account")
+        }, 5000)
+    </pre>
+    <hr>
+    <h1 style="text-align: center;">Finally clause</h1>
+    <hr>
+    <p>This function will be exicuted even if there is an error no matter what</p>
+    <pre>
+        syntax : 
+        try{
+
+        }
+        catch() {
+
+        }
+        finally {
+            //code
+        }
+
+        example: 
+
+        try{
+            let a= 0;
+            console.log(program)
+            console.log("program ran successfully")
+        }
+        catch(err) {
+            console.log('this is an error')
+        }
+        finally {
+            console.log("I am a good boy" );
+        }
+    </pre>
+    <hr>
+    <script src="script.js"></script>
+</body>
+</html>

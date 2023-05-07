@@ -1,0 +1,13 @@
+{
+    "name": "charan",
+    "age": 19,
+    "stack": ["javascript", "c", "jquery", "scss/sass", "bootstrap"],
+    "is_student": true,
+    "passport_no": null,
+    "address": {
+        "city": "bangalore",
+        "state": "karnataka",
+        "country": "india",
+        "pincode": 560049
+    }
+}

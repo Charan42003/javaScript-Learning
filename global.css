@@ -1,0 +1,11 @@
+body {
+    /* background: black;
+    color: white; */
+    background: whitesmoke;
+    color: rgb(29, 28, 28);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1, h2, h3, h4 {
+    /* color: yellow; */
+    color: rgb(135, 27, 197);
+}

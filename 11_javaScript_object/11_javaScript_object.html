@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+    <h1 style="text-align: center;"> Object in JavaScript</h1>
+    <hr>
+    <p>Object </p>
+    <ol>
+        <li>Properties </li>
+        <li>Action or Function</li>
+    </ol>
+    <pre>
+        syntax: 
+            let object_name = {};
+
+        Example: 
+        let object = {
+            firstName: "charan",
+            lastName: "raj",
+            age: 19
+        };
+        console.log(object);
+        console.log(object.firstName); // accessing using dot notation
+        console.log(object['lastName']); //accessing using array notation
+            
+        -> to modify
+        object.firstName = "jathin";
+    </pre>
+    <hr>
+
+    <h1 style="text-align: center;"> Property</h1>
+    <hr>
+
+    <p>add a property to object </p>
+    <pre>
+        syntax: 
+            let object_name = {};
+            object_name.property = value;
+
+        Example: 
+        let data = {
+            firstName: "charan",
+            lastName: "raj",
+            age: 19
+        };
+        data.result = "pass"
+        console.log(data);
+        console.log(data.firstName); // accessing using dot notation
+        console.log(data['result]); //accessing using array notation
+    </pre>
+    <hr>
+
+    <p>deleting a property to object </p>
+    <pre>
+        syntax: 
+            let object_name = {};
+            delete object_name.property;
+
+        Example: 
+        let data_del = {
+            firstName: "charan",
+            lastName: "raj",
+            age: 19
+        };
+        delete data_del.lastName;
+        console.log(data_del);
+    </pre>
+    <hr>
+
+    <p>check if property exists or no </p>
+    <pre>
+        syntax: 
+            'property_name' in object_name;
+
+        Example: 
+        let info = {
+            firstName: "charan",
+            lastName: "raj",
+            age: 19
+        };
+        console.log(info);
+        console.log('heigth' in info);
+        console.log('age' in info);
+    </pre>
+    <hr>
+
+    <p>for in loop </p>
+    <pre>
+        syntax: 
+            for(let variable_name in object_name);
+
+        Example: 
+        let bank = {
+            name: "charan raj s",
+            accountNO: 3090934,
+            phoneNO: 983474839384
+        }
+
+        for(let key in bank) {
+            console.log(key);
+        }
+        for(let key in bank) {
+            console.log(`${key}: ${bank[key]}`);  // to access the value of the property inside loop we have to use array notation
+        }
+    </pre>
+    <hr>
+    <h1 style="text-align: center;"> Meathod/action Object</h1>
+    <hr>
+    <pre>
+        1. 
+            let person = {
+                name: "charan",
+                age: 19,
+                sayHello: function() {
+                    console.log("hello!");
+                }
+            }
+            person.sayHello();
+        
+        2.
+            let person = {
+                name: "charan",
+                age:19
+            }
+            person.sayHello = function() {
+                console.log("hello!");
+            }
+            person.sayHello();
+        
+        3.
+            let person = {
+                name: "charan",
+                age: 19
+            }
+            person.sayHello = greet;
+            function greet() {
+                console.log("hello!");
+            }
+            person.sayHello();
+
+        4. 
+            let person = {
+                name: "charan",
+                age: 19,
+                sayHello () {
+                    cosole.log("hello!!");
+                }
+            }
+            person.sayHello();
+    </pre>
+    <hr>
+
+    <h1 style="text-align: center;"> 'this' keyword</h1>
+    <hr>
+    <pre>
+        this is used to 
+        let car = {
+            brand: "tata",
+            hello() {
+                console.log(`${this.brand} is famous`)
+            }
+        }
+        car.hello();
+    </pre>
+    <hr>
+
+    <h1 style="text-align: center">Math Object</h1>
+    <hr>
+    <pre>
+        console.log(Math.PI); //gives pi value
+        console.log(Math.E);
+        console.log(Math.ceil(2.44)); // gives the top value
+        console.log(Math.floor(1.55)); // gives the bottom value
+        console.log(Math.round(4.6));  // rounds the value
+        console.log(Math.trunc(4.8));   // removes the point
+        console.log(Math.pow(10, 2));   // gives the power
+        console.log(Math.sqrt(100));    // gives the squareroot
+        console.log(Math.min(5, 100, 89, 66, -9, 0));   // gives the minimum value
+        console.log(Math.max(5, 100, 89, 66, -9, 0));   // gives the maximum value
+
+        **generating a random number **
+        console.log(Math.random())
+        let rand = Math.floor(Math.random() * 101);
+        console.log(rand);
+        **generating a random number in range**
+        let range = Math.floor(Math.random() * (25 - 15)) + 15; //Math.floor(Math.random() * (max-num - min-num)) + min-num
+        console.log(range);
+    </pre>
+    <hr>
+
+    <h1 style="text-align: center">Date Object</h1>
+    <hr>
+    <pre>
+        syntax:
+            new Date();
+        
+        minimum 2 and maximum 6 parapeters can be given
+        minimum date and year is needed
+        can also be given in string
+
+        example: 
+        let date = new Date(2018, 0, 13, 10, 33, 56, 7);
+        //  year, month(0-11), day, hour, minute, second, milisecond
+        let stringDate = new Date("October 12, 2022 11:12:33");
+    </pre>
+    <p>Date Methods</p>
+    <pre>
+      getFunction
+
+        let currentDate = new Date();
+        console.log(currentDate.getDate());
+        console.log(currentDate.getDay());
+        console.log(currentDate.getMonth());
+        console.log(currentDate.getHours());
+        console.log(currentDate.getMinutes());
+        console.log(currentDate.getSeconds());
+        console.log(currentDate.getTime());
+    
+      setFunctiond
+
+        let setDate = new Date();
+        setDate.setHours("2");
+        setDate.setMinutes("2");
+        setDate.setFullYear("2");
+        console.log(setDate);
+        
+    </pre>
+    <hr>
+    <h1 style="text-align: center">'new' Keyword (creating objects with "new" keyword</h1>
+    <hr>
+    <pre>
+        syntax:
+            let newObject = new Object();
+
+        Example:
+            let newObject = new Object();
+            newObject.Name = "Charan";
+            newObject.College = "EPCHE";
+    </pre>
+    <hr>
+
+    <h1 style="text-align: center">getter and setter</h1>
+    <hr>
+    <p>getter - mainpulate data and get the data(parameters cannot be passed)</p>
+    <pre>
+        syntax:
+        get gatename() {
+            return 
+        }
+        
+        Example:
+            let getter = {
+                name: "CHARAN",
+                lastName: "raj",
+                get getname() {
+                    return this.name.toLowerCase();
+                }
+            };
+            console.log(getter.getname);
+        
+    </pre>
+    <hr>
+    <p>setter - manipulates and changes the data(parameters can be used) </p>
+    <pre>
+        syntax:
+        get setname(parameters if needed) {
+            //code to manipulate 
+        }
+            
+        Example:
+        let setter = {
+            name: "charan",
+            lastName: "raj",
+            set setName(nam) {
+                this.name = nam.toUpperCase();
+                return "hello"
+            }
+        }
+        setter.setName = "Kiran";
+        console.log(setter.name);
+        console.log(setter);
+            
+    </pre>
+    <hr>
+
+    <h1 style="text-align: center">Object Constructor Function</h1>
+    <hr>
+    <p>this is used to create new objects with same properties</p>
+    <pre>
+        syntax:
+            function Object(last, first, .. parameters) {
+                this.property_name = value(approprate parameter)
+            }
+            let object_name = new Object(na, na, ... parameters);
+
+        Example: 
+            function Object(first, last, name, college, course) {
+                this.firstName = first;
+                this.lastName = last;
+                this.name = name;
+                this.college = college;
+                this.course = course;
+            }
+            let student1 = new Object("charan", "raj", "charan raj", "EPCHE", "BCA");
+            let student2 = new Object("RAJ", "CHARAN", "RAJ CHARAN", "EPCHE", "BCA");
+    </pre>
+    <hr>
+    <h2>Object Prototype</h2>
+    <p>the way through which meathod and properties can be added after the object is made (inheriting takes place)</p>
+    <pre>
+        syntax:
+
+            function Object(parameters) {
+                this.property_name = value(approprate parameter);
+            }
+            let object_name = new Object(na, na, ... parameters);
+
+            Object.prototype.new_property =  value;
+
+        Example: 
+
+            function Pro(first, last) {
+                this.firstName = first;
+                this.lastName = last;
+            }
+            Pro.prototype.nationality = "indian";
+            Pro.prototype.name = function() {
+                return `${this.firstName} ${this.lastName}`;
+            }
+            let pro1 = new Pro("Charan", "Raj");
+            let pro2 = new Pro("kiran", "Kumar");
+            
+            
+            console.log(pro1);
+            console.log(pro1.nationality);
+            console.log(pro2);
+            console.log(pro2.name());
+    </pre>
+    <hr>
+
+    <h3>Nested Object</h3>
+    <p>using object inside object </p>
+    <pre>
+        Example: 
+            let userData = {
+                user_id: 10934,
+                log_date: "12/03/2022",
+                personal_info: {
+                    name: "charan",
+                    age: 19,
+                    email: "abc@email.com",
+                    address: {
+                        street: "abc",
+                        city: "bnglor",
+                        state: "karna",
+                        country: "india"
+                    }
+                }
+            }
+
+            accessing: 
+            userData
+            userData.personal_info
+            userData.personal_info.address
+            userData.personal_info.address.street
+    </pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

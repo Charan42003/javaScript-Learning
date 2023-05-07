@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+    <h1 style="text-align: center;"> Functions in JavaScript</h1>
+    <hr>
+    <p>Functions </p>
+    <pre>
+        syntax: function function_name() {
+
+        } //function definition
+        function_name(); //function call
+
+        Example: 
+            function func() {
+                console.log("hello world");
+            }
+            func();
+    </pre>
+    <hr>
+
+    <p>Functions with parameters/arguments </p>
+    <pre>
+        syntax: function function_name(parameters list) {
+
+        } //function definition
+        function_name(argument list); //function call
+
+        Example: 
+            function table(num) {
+                for(let i = 1; i <= 10; i++) {
+                    console.log(`${num} X ${i} = ${num * i} \n`);
+                }
+            }
+            table(3);
+
+            function sum(a, b, c) {
+                console.log("sum = " + (a + b + c));
+            }
+            sum(4, 4, 12);
+    </pre>
+    <hr>
+
+    <p>arguments property in function </p>
+    <pre>
+        syntax: function function_name() {
+            arguments;
+        } //function definition
+        function_name(argument list); //function call
+
+        Example: 
+            function argu() {
+                console.log(arguments.length);
+            }
+            argu(2);
+            argu("hello", 5);
+            argu(2, 4, 5, true);
+    </pre>
+    <hr>
+
+    <p>return in function </p>
+    <pre>
+
+        syntax: function function_name() {
+            return (value); (or) return value;
+        } //function definition
+        let variable = function_name(); //function call
+
+        Example: 
+           function multi(a, b) {
+            return (a*b);
+           }
+           console.log(multi(3, 10));
+
+           function compare(a, b) {
+            if(a > b) {
+                return `${a} is greater`;
+            }
+            else if( a < b) {
+                return `${b} is greater`;
+            }
+            else if( a == b) {
+                return `a and b is equal`;
+            }
+        }
+        console.log(compare( 30, 40));
+    </pre>
+    <hr>
+
+    <p>global and local variable </p>
+    <ul>
+        <li>global variables are declared outside the function and can be used throught out the program </li>
+        <li>local variables are declared inside the function and can be used only inside the function </li>
+    </ul>
+    <pre>
+        let a = 30;  //global variable
+        function adding() {
+            let b = 20; //local variable
+            console.log(a + b);
+        }
+        adding();
+    </pre>
+    <hr>
+   
+    <p>Ananomous function</p>
+    <pre>
+        //function expression
+        let function_variable = function(){
+            console.log("this is a function that is stored in a variabel")
+        }
+        function_variable();
+        setTimeout(function_variable, 3000);
+
+        setTimeout(function(){
+            alert("ananomous function alert");
+        }, 5000);
+    </pre>
+    <hr>
+
+    <p>Immediately invoked function</p>
+    <pre>
+        syntax:
+        (function(){//code})();
+
+        example:
+        (function() {
+            console.log("this console is function is immediately invoked")
+        })();
+    </pre>
+    <hr>
+
+    <p>Arrow function</p>
+    <pre>
+        syntax:
+        function_name = () => {
+            //code
+        }
+
+        example:
+        sub = (a, b) => {
+            console.log(a - b);
+        }
+        sub(19, 16);
+    </pre>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

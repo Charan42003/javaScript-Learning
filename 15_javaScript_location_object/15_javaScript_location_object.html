@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location Object</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Location Object</h1>
+    <hr>
+
+    <h3>location object properties</h3>
+    <hr>
+    <pre>
+        let href = location.href;
+        let pathName = location.pathname;
+        let protocol = location.protocol;
+
+        example:
+            console.log(location.href);
+            console.log(location.pathname);
+            console.log(location.protocol);
+
+        output:
+            file:///C:/Users/user/Desktop/sample%20app/index.html
+            script.js:2 /C:/Users/user/Desktop/sample%20app/index.html
+            script.js:3 file:
+    </pre>
+    <hr>
+
+    <h3>redirect (setlocation path)</h3>
+    <hr>
+    <pre>
+    1.
+        window.location = 'path';
+
+        example:
+            window.location = "https://www.yahoo.com";
+            
+    2.
+        location.href = 'path';
+
+        example:
+           location.href = "https://www.yahoo.com";
+
+    3.
+        location.assign('path');
+
+        example:
+            location.assign("https://www.instagram.com");
+    
+    4. 
+        location.replace('path');
+
+        example:
+            location.replace("https://www.instagram.com");
+
+    5.
+        location.reload();
+    </pre>
+    <hr>
+
+    <h3>Navigator Object</h3>
+    <hr>
+    <pre>
+        navigator.appName;
+        navigator.appVersion;
+        navigator.appCodeName;
+        navigator.cookieEnabled;
+        navigator.userAgent;
+        navigator.platform;
+        navigator.javaEnabled;
+
+        Netscape
+        5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+        Mozilla
+        true
+        Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+        Win32
+    </pre>
+    <hr>
+
+    <h3>
+        screen object
+    </h3>
+    <hr>
+    <pre>
+        screen.width;
+        screen.height;
+        screen.colorDepth;
+        screen.orientation;
+    </pre>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

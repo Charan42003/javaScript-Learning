@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object destructuring</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Object Destructuring</h1>
+    <hr>
+    <p>
+        allows you to neatly extract an object value into new variables
+        <br>
+        <B> <u>note:</u></B> variable name and property name should be same
+    </p>
+    <hr>
+    <pre>
+        syntax:
+            let{property_name_1, property_name_2, ..., property_name_n} = object;
+                for nested array
+            let{property_name_1, property_name_2, ..., nested_Object : {nest_property_1, ..., nest_property_n}} = object;
+
+            objects can be directly written in the place of 'object'
+
+        example:
+            let data = {
+                name: "charan",
+                age: 19,
+                obj: {
+                    college: "ABCD",
+                    place: "Bangalore",
+                    pin: 460049
+                }
+            };
+            
+            let{name : n, age, obj : {college, place, pin}} = data;
+            console.log(n);
+            console.log(age);
+            console.log(college);
+            console.log(place);
+            console.log(pin);
+    </pre>
+    <hr>
+    <script src="script.js"></script>
+</body>
+</html>

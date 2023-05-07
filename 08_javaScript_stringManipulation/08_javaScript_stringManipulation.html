@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/global.css">
+    <title>String Manipulation</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> String Manipulation </h1>
+    <hr>
+    <h2>To Find String Length</h2>
+    <pre>
+                Syntax: 
+                    string.length 
+                
+                Example: 
+                    let a = "This Is JavaScript";
+                    console.log(a.length);
+    </pre>
+    <hr><hr>
+    <h2>String Concatination</h2>
+        <p>Used to join strings</p>
+    <pre>
+                Syntax: 
+                    str1.concat(str2...)
+                
+                Example: 
+                    let str1 = "This Is JavaScript";
+                    let str2 = "This Is Css";
+                    let result = str1.concat(" " + str2);
+                    console.log(result)
+    </pre>
+    
+    <hr><hr>
+    <h2>subString Fetching</h2>
+        <p>Using substr() function</p>
+    <pre>
+                Syntax: 
+                    Main_string.substr(string_index, numberOfCharactersFromIndex);
+                
+                Example: 
+                    let longStr = "This Is JavaScript, a scripting language";
+                    let newStr = longStr.substr(8, 10);
+                    console.log(newStr);
+    </pre>
+
+    <hr><hr>
+    <h2>subString Fetching</h2>
+        <p>Using substring() function</p>
+    <pre>
+                Syntax: 
+                    Main_string.substring(string_index, numberOfCharactersFromIndex);
+                
+                Example: 
+                    let longString = "This Is JavaScript, a scripting language";
+                    let newString = longString.substring(8, 18);
+                    console.log(newStr);
+    </pre>
+
+    <hr><hr>
+    <h2>To Find the Position Of a Character in a string </h2>
+    <p>Using indexof() function</p>
+    <pre>
+                Syntax: 
+                    string.indexOf('subString/character');
+                
+                Example: 
+                    let indexString = "This Is JavaScript and It Is good and easy to understand ";
+                    console.log(indexString.indexOf("good"));
+    </pre>
+    <p>To Ignore first n occurance - Using indexof() function</p>
+    <pre>
+                Syntax: 
+                    string.indexOf('subString/character', indexToSkip);
+                
+                Example: 
+                    let indexString = "This Is JavaScript and It Is good and easy to understand ";
+                    console.log(indexString.indexOf("and", 25));
+    </pre>
+    <p>TO find the position in reverse order - Using lastIndexof() function</p>
+    <pre>
+                Syntax: 
+                    string.lastIndexOf('subString/character');
+                
+                Example: 
+                    let indexString = "This Is JavaScript and It Is good and easy to understand ";
+                    console.log(indexString.indexOf("JavaScript"));
+    </pre>
+
+    <hr><hr>
+    <h2>To trim white space </h2>
+    <p>trim white space from start and end of the string</p>
+    <pre>
+                Syntax: 
+                    string.trim();
+                
+                Example: 
+                    let indexString = " This Is JavaScript and It Is good and easy to understand ";
+                    console.log(indexString.trim());
+    </pre>
+    <p>trim white space from start of the string</p>
+    <pre>
+                Syntax: 
+                    string.trimStart();
+                
+                Example: 
+                    let indexString = " This Is JavaScript and It Is good and easy to understand ";
+                    console.log(indexString.trimStart());
+    </pre>
+    <p>trim white space from end of the string</p>
+    <pre>
+                Syntax: 
+                    string.trimEnd();
+                
+                Example: 
+                    let indexString = " This Is JavaScript and It Is good and easy to understand ";
+                    console.log(indexString.trimEnd());
+    </pre>
+
+    <hr><hr>
+    <h2>Check If a subString Exists in the string or NO </h2>
+    <p> Using includes() function (it returns boolean values) </p>
+    <pre>
+                Syntax: 
+                    string.includes('sunString to search');
+                
+                Example: 
+                    let indexString = " This Is JavaScript and It Is good and easy to understand ";
+                    console.log(indexString.includes('easy'));
+    </pre>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

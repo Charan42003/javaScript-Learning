@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model - DOM</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Document Object Model - DOM</h1>
+    <hr>
+    <p>
+        Document Object Model - DOM is an Application Programming Interface(API) for manipulating HTML, XML documents <br>
+        (adding, removing, & modifying parts of the documents)
+    </p> <br><br>
+    <hr>
+    <h3>Selecting Elements using "id"</h3>
+    <hr>
+    <pre>
+        it returns 'null' if ID doesn't exist
+        syntax:
+            document.getElementById("id_Name");
+
+        example:
+            let a = document.getElementById("btn");
+    </pre>
+    <hr>
+
+    <h3>Selecting Elements using 'class'</h3>
+    <hr>
+    <pre>
+        stores in form of array
+        syntax: 
+         document.getElementsByClassName("class_name");
+
+        example:
+         let a = document.getElementsByClassName("part");
+         console.log(a[0]);
+    </pre>
+    <hr>
+
+    <h3>Selecting Elements using 'tagName'</h3>
+    <hr>
+    <pre>
+        stores in form of array
+        syntax:
+         document.getElementsByTagName('tag_name');
+
+        example:
+            let a = document.getElementsByTagName('p');
+            console.log(a[0]);
+    </pre>
+    <hr>
+
+    <h3>Selecting Elements using "css Selectors"</h3>
+    <hr>
+    <ul>
+        <li>querySelector - selects only the first element</li>
+        <li>querySelectorAll - selects all the elements with the css property and stores in form of array</li>
+    </ul>
+    <pre>
+        1. querySelector
+          syntax:
+             document.querySelector('css Selector')
+
+          example:
+            let a = document.querySelector('li .menu');
+            console.log(a);
+        
+        2. querySelectorAll
+           syntax:
+                document.querySelectorAll("css selector");
+
+           example:
+                let a = document.querySelectorAll("li");
+                console.log(a[2]);
+    </pre>
+    <hr>
+
+    <h3>parent and child (indirect selection) </h3>
+    <hr>
+    <pre>
+        1. selecting parent
+            syntax: 
+                 child_element.parentElement;
+
+        2. selecting first child
+            syntax:
+                parent_element.firstElementChild;
+        
+        3. selecting last child
+            syntax:
+                parent_element.lastElementChild;
+
+        4. selecting all the child elements inside the parent
+            syntax;
+                parent_element.children;
+    </pre>
+    <hr>
+
+    <h3>Sibling selection</h3>
+    <hr>
+    <pre>
+        1. previousElementSibling
+            syntax: 
+                selected_element.previousElementSibling;
+                
+        2. nextElementSibling
+            syntax: 
+                selected_element.nextElementSibling;
+    </pre>
+    <hr>
+
+    <h3>Mainpulating Elements using 'innerHTML'</h3>
+    <hr>
+    <pre>
+        syntax:
+            selected_element.innerHTML = " html to Mainpulate";
+        
+        example:
+            let a = document.querySelector(".div");
+            a.innerHTML = 'Click me';  // tags can also be given
+
+        .textContent //this will give the inner text of the element 
+    </pre>
+    <hr>
+
+    <h3>create and append elements</h3>
+    <hr>
+    <pre>
+        creating element:
+            document.createElement("tag name");
+
+        appending element:
+            parent.appendChild("new_created Element");
+
+        example:
+            let par = document.getElementById("div");
+            let btn = document.createElement("button");
+            btn.innerText = "click me";
+            btn.className = "hello class";
+            par.appendChild(btn);
+    </pre>
+    <hr>
+
+    <h3>insertBefore</h3>
+    <hr>
+    <pre>
+         insertBefore 
+            syntax:
+                parent.insertBefore(elementToInsert, position_element);
+    </pre>
+    <hr>
+
+    <h3>remove element</h3>
+    <hr>
+    <pre>
+       remove element
+        syntax:
+            parent_Element.removeChild(elementToRemove); 
+    </pre>
+    <hr>
+
+    <h3>Cloning element</h3>
+    <hr>
+    <pre>
+        syntax:
+            cloning_Element.cloneNode(true); // true is needed to copy the child elements.
+
+        example:
+            cloned = cloning_element.cloneNode(true);
+            document.body.appendChild(cloned);
+    </pre>
+    <hr>
+
+    <h3>replacing element</h3>
+    <hr>
+    <pre>
+        syntax: 
+            parent.replaceChild(element_to_replace, target-what to replace);
+
+        example:
+            let a = document.getElementById("parent");
+            let cr = document.createElement('li');
+            cr.innerText = 'newly created';
+            let replace = document.querySelector("#child").nextElementSibling;
+            a.replaceChild(cr, replace);
+    </pre>
+    <hr>
+
+    <h3>insert AdjacentHTML</h3>
+    <hr>
+    <pre>
+        1. beforebegin
+            syntax:
+                target.insertAdjacentHTML('beforebegin', "element to add"); // eg <p>writings</p>
+        
+        2. afterbegin
+            syntax:
+                target.insertAdjacentHTML('afterbegin', "element to add");
+
+        3. beforeend
+            syntax:
+                target.insertAdjacentHTML('beforeend', "element to add");
+
+        4. afterend
+            syntax:
+                target.insertAdjacentHTML('afterend', "element to add");
+    </pre>
+    <hr>
+
+    <h3>changing Attributes</h3>
+    <hr>
+    <pre>
+        syntax:
+            element.setAttribute('name', "value"); //to set Attributes
+            element.removeAttribute('name'); //removes Attribute
+            element.getAttribute('name')// to get the value of attribute
+            element.hasAttribute('name');// checks if the attribute exists (returns true or false);
+    </pre>
+    <hr>
+
+    <h3>changing inline Styling</h3>
+    <hr>
+    <pre>
+        syntax:
+            element.style.cssText = "properties and values; ....";// this will erase the previous value 
+                                                                  // .cssText += "properties and values" 
+            (or)
+            setAttribute method
+            (or)
+            element.style.property = "value";
+    </pre>
+    <hr>
+
+    <h3>manipulating class</h3>
+    <hr>
+    <pre>
+        element.classList; // shows all the classes used
+        element.classList = value // adds the  class ;
+        element.classList.add('class_name');// adds class
+        element.classList.remove('class_name');// removes class
+        element.classList.replace("target", "new_class");// replaces the class
+        element.classList.contains('class_name');// checks if the class exists returns t/f
+        element.classList.toggle('class_name');// toggles the class 
+    </pre>
+    <hr>
+
+    <h3>find the heigth and width of the element</h3>
+    <hr>
+    <pre>
+        1. offset - this will addup all the margin and borders 
+        2. client - this will add only padding, margin and border won't be added
+
+        element.offsetWidth;
+        element.offsetHeight;
+        element.clientWidth;
+        element.clientHeight;
+    </pre>
+    <hr>
+
+    <h3>DOM - Events</h3>
+    <hr>
+    <pre>
+        attribute way(inline):
+            eg: onclick="finction()" inside tags
+
+        adding eventListeners
+            syntax: 
+                element.addEventListener('event', function(){
+                    //code
+                });
+    </pre>
+    <hr>
+
+    <h3>remove eventListeners</h3>
+    <hr>
+    <pre>
+        this can be applied if eventListener is not having ananomous function;
+
+        syntax:
+            element.removeEventListener('event', 'function');
+    </pre>
+    <hr>
+
+    <h3>page load Events</h3>
+    <hr>
+    <pre>
+        1. DOMContentLoaded // external files like stylesheet, images wont be loaded
+            syntax:
+                window.addEventListener('DOMContentLoaded', function(){
+                    //code;
+                });
+        2. load     // all the external will be loaded 
+            syntax:
+                window.addEventListener('load', function(){
+                    //code;
+                });
+    </pre>
+    <hr>
+
+    <h3>Event Bubbling and Event Capturing</h3>
+    <hr>
+    <p>
+        event bubbling - child to parent (false //default) <br>
+        event capturing - parent to child (true)
+    </p>
+    <pre>
+        event bubbling
+            example:
+            let div = document.querySelector("#div");
+            let btn = document.querySelector("#button");
+            let body = document.body;
+            
+            body.addEventListener('click', bodyCli, false);//false part could be empty
+            div.addEventListener('click', divCli, false);//false part could be empty
+            btn.addEventListener('click', btnCli, false);//false part could be empty
+            
+            function bodyCli() {
+                console.log("body clicked");
+            }
+            function divCli() {
+                console.log("div clicked");
+            }
+            function btnCli() {
+                console.log("btn clicked");
+            }
+
+        event capturing 
+            example:
+            let div = document.querySelector("#div");
+            let btn = document.querySelector("#button");
+            let body = document.body;
+            
+            body.addEventListener('click', bodyCli, true);
+            div.addEventListener('click', divCli, true);
+            btn.addEventListener('click', btnCli, true);
+            
+            function bodyCli() {
+                console.log("body clicked");
+            }
+            function divCli() {
+                console.log("div clicked");
+            }
+            function btnCli() {
+                console.log("btn clicked");
+            }
+    </pre>
+    <hr>
+
+    <h3>Stop Propogation</h3>
+    <hr>
+    <pre>
+        it will only trigger the clicked element not along with parent or child or sibling
+        // this can be applied with eventBubbling
+        example: 
+            let div = document.querySelector("#div");
+            let btn = document.querySelector("#button");
+            let body = document.body;
+            
+            body.addEventListener('click', bodyCli);
+            div.addEventListener('click', divCli);
+            btn.addEventListener('click', btnCli);
+            
+            function bodyCli() {
+                console.log("body clicked");
+            }
+            function divCli() {
+                console.log("div clicked");
+            }
+            function btnCli(event) {
+                console.log("btn clicked");
+                event.stopPropagation();
+            }
+    </pre>
+    <hr>
+
+    <h3>Prevent Default</h3>
+    <hr>
+    <pre>
+        removes the event assigned to it or
+        simply remove the behavour of the element and mainpulate
+
+        example:
+            let link = document.querySelector('a');
+            link.addEventListener('click', function(e) {
+                console.log("clicked");
+                e.preventDefault();
+            });
+    </pre>
+    <hr>
+    <script src="script.js"></script>
+</body>
+</html>

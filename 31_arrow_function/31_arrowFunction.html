@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow function</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Arrow Funciton</h1>
+    <hr>
+    <p>when we use arrow function. The function should be stored inside a variable</p>
+    <pre>
+        syntax :
+
+            let function_Name = (parameters) => {
+                //code
+            }
+
+        example :
+
+            let sum = (a, b) => {
+                let s = a+b;
+                return s;
+            }
+            sum(4, 5);
+
+        If the code inside the function is of only one line and the line is returning a value
+            let sum = (a, b) => a+b;
+            sum(4,5)
+
+        for single parameter (only if the number of parameter is one)
+            let double = a => a*2;
+            double(a);
+    </pre>
+    <hr>
+    <script src="script.js"></script>
+</body>
+</html>

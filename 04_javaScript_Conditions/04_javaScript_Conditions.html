@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/global.css">
+    <title>Conditions in JavaScript</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Conditions in JavaScript</h1>
+    <hr><hr>
+    <h1>simple if and if else </h1>
+    <p>simple if : it is used to check the condition and if the condition is true the statement inside the if condition is executed</p>
+    <p>if else : it is used to check the condition and if the condition is true the statement inside the if condition is executed if its fasle the else part is executer</p>
+    <pre>syntax - 
+        for simple if: 
+             if(argument){
+                statement;
+             }
+             
+        for if else:
+             if(argument){
+                statement;
+             }
+             else{
+                statement;
+             }
+    </pre>
+    <hr><hr>
+    <h1>else if </h1>
+    <p>else if : it is used to check multiple conditions and any number of else if's can be used</p>
+    <pre>
+        syntax -
+            if(argument){
+                statement;
+            }
+            else if(argument){
+                statement;
+            }
+            else{
+                statement;
+            }
+    </pre>
+    <H3>Note: else part is optional</H3>
+    <hr><hr>
+    <h1>Nested if else</h1>
+    <pre>
+        if(argument){
+            if(argument){
+                statement;
+            }
+            else{
+                statement;
+            }
+        }
+        else{
+            statement;
+
+               (or)
+
+            if(argument){
+                statement;
+            }
+            else{
+                statement;
+            }
+        }
+    </pre>
+    <hr><hr>
+    <h1 style="text-align: center;">Ternary Operator in JavaScript</h1>
+    <pre>
+        syntax: 
+            condition ? statement1 : statement2;
+            //condition      true       : false;
+    </pre>
+    <p>It checks the condition and if it's true it executes the first statement and if it's false it executes the second statement</p>
+    <hr><hr>
+    <h1 style="text-align: center;">Null is collesing Operator in JavaScript</h1>
+    <p>If a variable is undefined this operator will show its alternating output which the programer givs.</p>
+    <pre>
+        symbol to use: ??
+        example: 
+            let user;
+            alert(user ?? "Guest user");
+    </pre>
+    <hr><hr>
+
+    <h1 style="text-align: center;">Switch statement in JavaScript</h1>
+    <pre>
+        syntax:
+
+            switch(variable name (or) condition)    //if we use condition then it returns true or false i.e, 1 or 0 to case
+            {
+                case condition:
+                --------------
+                break;
+                case condition-n:
+                --------------
+                break;
+                default:
+                --------------
+            }
+    </pre>
+    <hr><hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

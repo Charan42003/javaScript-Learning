@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval & setTimeout</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+    <h1 style="text-align: center;">SetInterval & SetTimeout</h1>
+    <hr>
+
+    <h3>setTimeout</h3>
+    <hr>
+    <p>runs a perticular set of code after the time delay set by the programmer</p>
+    <pre>
+        syntax:
+
+            setTimeout(function(), timeInMiliSecond);
+
+        example:
+            setTimeout(function() {
+                alert("hello")
+            },1000); // this will alert "hello" after 1sec
+    </pre>
+    <hr>
+
+    <h3>setInterval</h3>
+    <hr>
+    <p>continuelsy runs a set of code with the time line given</p>
+    <pre>
+        syntax:
+            setInterval(function(), timeInMiliSecond);
+
+        example:
+            let i = setInterval(function() {
+                console.log(1)
+            }, 1000)
+
+        to remove setInterval 
+        syntax:
+            clearInterval(name of the interval);
+
+        example:
+            clearInterval(i) //clearing the previous interval;
+    </pre>
+    <script src="script.js"></script>
+</body>
+</html>

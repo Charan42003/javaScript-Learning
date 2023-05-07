@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center">Promises</h1>
+    <hr>
+    <p>promise is the solution for callback hell <br> A promise is a promise of code execution The call either executes or fails in both the cases the subscriper will be notified</p>
+    <p>state - initially pending, this case is either fulfieled or rejected  </p>
+    <p>
+        initially verified, then changes to value if resolved or rejected 
+    </p>
+    <pre>
+        syntax to create a new promise:
+        let promise = new Promise((resolve, reject)=> {
+            //code.
+        });
+        
+        resolve- if the job is fulfield successfully
+        reject- if the job fails 
+
+        let promise = new Promise(function(resolve, reject) {
+            console.log("Promise ....")
+        })
+
+        example:
+        let p1 = new Promise(function(resolve, reject) {
+            console.log("promise is pending...")
+            setTimeout(function() {
+                console.log("I am a promise and I am resolved");
+                resolve(true);
+            }, 5000);
+        })
+        let p2 = new Promise(function(resolve, reject) {
+            console.log("promise is pending...")
+            setTimeout(function() {
+                console.log("I am a promise and I am rejected");
+                reject(new Error("I called this error"));
+            }, 5000);
+        })
+        
+        console.log(p1, p2)
+    </pre>
+    <hr>
+    <h1 style="text-align: center">.then</h1>
+    <hr>
+    <pre>
+        syntax:
+            promise.then( function(result) {//result }
+            );
+    </pre>
+    <hr>
+    <h1 style="text-align: center">.catch</h1>
+    <pre>
+        syntax:
+            promise.catch(error) {
+                //error 
+            };
+    </pre>
+    <hr>
+    <h4>Example: </h4>
+    <pre>
+        let p1 = new Promise((resolve, reject) =>{
+            setTimeout(function() {
+                // reject(new Error("Charan you got an error"))
+                resolve("Successful....")
+            }, 5000)
+        });
+        p1.then((value)=> {
+            console.log(value)
+        })
+        .catch((err)=> {
+            console.log(err)
+        });
+    </pre>
+    <hr>
+    <h1 style="text-align: center">Promise Chaining</h1>
+    <hr>
+    <p>We can chain promises and make them pass the result values to one another like this </p>
+    <pre>
+        promise.then( function(result) => {
+            alert(result);
+            return 2;
+        }).then((result) => {
+            alert(result)
+            return "second"
+        }).then.....
+
+
+        example:
+        //promise chaining
+        const loadscript = (src) => {
+            return new Promise((resolve, reject)=> {
+            let script = document.createElement('script')
+            script.type = 'text/javascript'
+            script.src = src
+            document.body.appendChild(script)
+            script.onload = ()=> {
+                resolve("successfull added script file with src: " + src)
+            }
+            script.onerror = ()=> {
+                reject(src + " failed to load charan")
+            }
+        })
+        }
+        // let p = loadscript('https://goo  gle.com'); // error path
+        let p = loadscript("temp.js") // noerror path
+        p.then((res)=> {
+            console.log(res)
+            return loadscript('ttt.js')
+        })
+        .then((res)=> {
+            console.log("Second script is ready")
+        })
+        .catch((error)=> {
+            console.log(error)
+        })
+    </pre> 
+    <hr>
+    <h1 style="text-align: center;">Attaching Multiple Handlers to a promise </h1>
+    <hr>
+    <pre>
+        syntax:
+
+            let p = new Promise((resolve, reject)=> {
+                //resolve 
+                //reject
+            })
+            p.then()
+            p.then()
+            p.then()
+
+
+        Example:
+
+            let p1 = new Promise((resolve, reject) => {
+                console.log("Hey this promise is not resolved")
+                setTimeout(()=> {
+                    resolve(1)
+                }, 5000)
+            });
+            p1.then(()=> {
+                console.log("congratulations this promise is successful")
+            })
+            p1.then(()=> {
+                setTimeout(()=> {
+                    console.log("Hurrey this is multi handler")
+                }, 4000);
+            })
+    </pre>
+    <hr>
+
+    <h1 style="text-align: center;">Promise API</h1>
+    <hr>
+    <ol>
+        <li>Promise.all([list of promises])</li>
+        <pre>
+        this will through an error if any one of the promise is rejected
+
+        let all_promises = Promise.all([p1, p2, p3]);
+
+        all_promises.then((value)=> {
+            console.log(value);
+        })
+        </pre>
+        <li>Promise.allSettled([list of promises])</li>
+        <pre>
+        this will show the status and value and reason if any promise is rejected 
+
+        let all_promises = Promise.allSettled([p1, p2, p3]);
+
+        all_promises.then((value)=> {
+            console.log(value);
+        })
+        </pre>
+        <li>Promise.race([list of promises])</li>
+        <pre>
+        this will show the value of the promise that will be run first
+
+        let all_promises = Promise.race([p1, p2, p3]);
+
+        all_promises.then((value)=> {
+            console.log(value);
+        })
+        </pre>
+        <li>Promise.any([list of promises])</li>
+        <pre>
+        this will show the value of the first promise that is resolved. This will not show rejected value
+
+        let all_promises = Promise.any([p1, p2, p3]);
+
+        all_promises.then((value)=> {
+            console.log(value);
+        })
+        </pre>
+        <li>Promise.resolve(value)</li>
+        <pre>
+        this will make a resolved promise with the given value
+
+        let all_promises = Promise.resolve(6);
+
+        all_promises.then((value)=> {
+            console.log(value);
+        })
+        </pre>
+        <li>Promise.reject(value)</li>
+        <pre>
+        this will make a rejected promise with the given value
+
+        let all_promises = Promise.reject(new Error("error Charan"));
+
+        all_promises.then((value)=> {
+            console.log(value);
+        })
+        </pre>
+
+    </ol>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

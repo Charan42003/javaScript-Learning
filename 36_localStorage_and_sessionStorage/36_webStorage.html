@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web storage</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Web Storage| Local Storage & Session Storage</h1>
+    <hr>
+    <h3 style="text-align: center;">Local Storage</h3>
+    <hr>
+    <ul>
+        <li>Local storage has capacity of 10mb</li>
+        <li>can be accessed in any window</li>
+        <li>Never Expires</li>
+        <li>storage location: browser only </li>
+    </ul>
+    <hr>
+    <pre>
+        <h3>Set localStorage(items)</h3>
+                                // 'key', 'value'
+            localStorage.setItem("firstName", "Charan")
+            localStorage.setItem('place', 'Bangalore')
+
+        <h3>Get localStorage(items)</h3>
+                                        // key
+            let a = localStorage.getItem('firstName')
+            console.log(a)
+
+        <h3>Remove localStorage(items)</h3>
+                                // key
+            localStorage.removeItem('place')
+    </pre>
+    <hr>
+    <h3 style="text-align: center;">Session Storage</h3>
+    <hr>
+    <ul>
+        <li>Session storage has capacity of 5mb</li>
+        <li>can be accessed from same tab</li>
+        <li>Expires on tab close</li>
+        <li>storage location: browser only </li>
+    </ul>
+    <hr>
+    <pre>
+        <h3>Set sessionStorage(items)</h3>
+                                // 'key', 'value'
+            sessionStorage.setItem("firstName", "Ron")
+            sessionStorage.setItem('place', 'Assam')
+
+        <h3>Get sessionStorage(items)</h3>
+                                        // key
+            let b = sessionStorage.getItem('place')
+            console.log(b)
+
+        <h3>Remove sessionStorage(items)</h3>
+                                    // key
+            sessionStorage.removeItem('firstName')
+    </pre>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

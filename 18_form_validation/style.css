@@ -1,0 +1,41 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 50px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+    border: 1px solid grey;
+    outline: none;
+}
+
+.submit_btn {
+    width: 225px;
+    padding: 10px;
+    color: white;
+    background: #3498db;
+    border: none;
+    font-size: 16px;
+}
+
+.error {
+    color: red;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
